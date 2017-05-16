@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Plannification des matchs</title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/starter-template.css" rel="stylesheet">
+    <link href="fontawesome/css/font-awesome.css" rel="stylesheet">
+    
+    <link href="reset.css" rel="stylesheet" type="text/css"/>
+    <link href="style.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="/moment.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker-standalone.min.css"></script>
+    
+    
+    
+    
+    
+</head>
+
+
+<body>
+  <div class="blog-masthead">
+        <div class="container">
+          <nav class="blog-nav">
+            <a class="blog-nav-item active" href="#">Home</a>
+            <a class="blog-nav-item" href="#">About</a>
+            <a class="blog-nav-item" href="#">Contact</a>
+            <input name="username" placeholder="Idenfiant" type="text" id="UserUsername"/>
+            <input name="password" placeholder="Mot de passe" type="password" id="UserPassword"/>
+            <input  class="btn btn-success btn btn-success" type="submit" value="Connexion"/></div>
+          </nav>
+        </div>
+  </div>
+    <div class="match">Match<div>
+      <select name="joueur1">
+        <option value="1">nadal</option>
+        <option value="2">djoko</option>
+      </select>
+      <select name="joueur2">
+        <option value="1">nadal</option>
+        <option value="2">djoko</option>
+      </select>
+      <select name="arbitre">
+        <option value="1">moi</option>
+        <option value="2">lui</option>
+      </select>
+      
+      
+      
+      <div class="container">
+          <div class="row">
+              <div class='col-sm-6'>
+                  <div class="form-group">
+                      <div class='input-group date' id='datetimepicker1'>
+                          <input type='text' class="form-control" />
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+              <script type="text/javascript">
+                  $(function () {
+                      $('#datetimepicker1').datetimepicker();
+                  });
+              </script>
+          </div>
+      </div>
+
+      
+      
+      
+      <input type="datetime" name="heure_debut" value="00:00:00" required>
+      <input type="datetime" name="heure_fin" value="00:00:00" required>
+
+    </div>
+                     
+    <script src="jquery/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,7 @@
+.btn {
+    width: 150px;
+}
+
+button .btn-label {
+    padding-left: 5px;
+}
