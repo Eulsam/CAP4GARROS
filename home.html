@@ -17,12 +17,13 @@
   <div class="blog-masthead">
         <div class="container">
           <nav class="blog-nav">
+            <img id="logo" src ="rg-logo-header.png" alt="logoRolandGarros" title ="logo de Roland Garros 2017"/>
             <a class="blog-nav-item active" href="#">Home</a>
             <a class="blog-nav-item" href="#">About</a>
             <a class="blog-nav-item" href="#">Contact</a>
             <input name="username" placeholder="Idenfiant" type="text" id="UserUsername"/>
             <input name="password" placeholder="Mot de passe" type="password" id="UserPassword"/>
-            <input  class="btn btn-success btn btn-success" type="submit" value="Connexion"/></div>
+            <input id="Connexion" class="btn btn-success btn btn-success" type="submit" value="Connexion"/></div>
           </nav>
         </div>
   </div>
@@ -36,11 +37,32 @@
                <input  class="btn btn-success btn btn-success" type="submit" value="Double dames"/>
                <input  class="btn btn-success btn btn-success" type="submit" value="Double mixtes"/>
                <input  class="btn btn-success btn btn-success" type="submit" value="Simples Juniors Garçons et Filles"/>
-               <input  class="btn btn-success btn btn-success" type="submit" value="Doubles Juniors Garçons et Filles"/>
-    
+               <input  class="btn btn-success btn btn-success" type="submit" value="Doubles Juniors Garçons et Filles"/> <br/><br/>
+               
+               <img style="display: block;margin: auto; width: 60%;" src ="YannickNoah.jpg" alt="photo_de_la_page_de_connection"/>
 
     <script src="jQuery/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
-    <script src="js/app.js"></script>
+    <script> 
+    
+    $("#Connexion").on("click", function login(){
+    var password = prompt( "Veuillez entrer le mot de passe pour accéder à cette page", "" );
+    // si un mot de passe a été entré
+    if ( username != null && password != null )
+    {
+    	// on le compare à celui attendu
+    	if ( username == "organisateur"  && password == "organisateur")
+    	{
+    	    // mot de passe valide, on ouvre la page d'accueil
+    	    document.location.href = "general.html";
+        }
+        else
+        {
+            alert( "Mot de passe incorrecte!", "Veuillez-vous reconnecter" );
+        }
+      }
+    });
+    
+    </script>
 </body>
 </html>
