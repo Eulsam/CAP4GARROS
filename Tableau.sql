@@ -1,56 +1,97 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
 
 
+#------------------------------------------------------------
+# Table: Joueur
+#------------------------------------------------------------
+
+CREATE TABLE Joueur(
+        Sexe Varchar (25) NOT NULL ,
+        id   Int NOT NULL ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
 
 
-CREATE TABLE Joueurs (
-	IdJoueur INTEGER PRIMARY KEY AUTO_INCREMENT,
-	Nom VARCHAR(100),
-	Prenom VARCHAR(100),
-	Sexe VARCHAR(50),
-	Nation VARCHAR(50),
-  Version INTEGER(10)
- )ENGINE=InnoDB DEFAULT CHARSET=utf8;
- 
-CREATE TABLE Arbitres (
-	IdArbitre INTEGER PRIMARY KEY AUTO_INCREMENT,
-	Nom VARCHAR(100),
-	Prenom VARCHAR(100),
-	Nation VARCHAR(50),
-	Niveau VARCHAR(10),
-  Version INTEGER(10)
- )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+#------------------------------------------------------------
+# Table: Arbitre
+#------------------------------------------------------------
 
-CREATE TABLE Courts (
-	IdCourt INTEGER PRIMARY KEY AUTO_INCREMENT,
-	Nom VARCHAR(100),
-  Numero INTEGER(10),
-  EtatCourt VARCHAR(30), 
-  Version INTEGER(10)
- )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE Arbitre(
+        id       Int NOT NULL ,
+        id_Matchs Int NOT NULL ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
 
-CREATE TABLE Matchs (
-	IdMatch INTEGER PRIMARY KEY AUTO_INCREMENT,
-	Equipe1 VARCHAR(100),
-	Equipe2 VARCHAR(100),
-	NomArbitre VARCHAR(100),
-	PrenomArbitre VARCHAR(100),
-	Court VARCHAR(50),
-	Calendrier DATE,
-	HeureDebut Time(6),
-	HeureFin Time(6),
-	Duree Float(50),
-	ResultatEquipe1 VARCHAR(20),
-  ResultatEquipe2 VARCHAR(20),
-  Version INTEGER(10)
- )ENGINE=InnoDB DEFAULT CHARSET=utf8;
- 
- CREATE TABLE Organisateurs (
-	IdOrganisateur INTEGER PRIMARY KEY AUTO_INCREMENT,
-	Nom VARCHAR(100),
-  MotDePasse VARCHAR(100),
-  Version INTEGER(10)
- )ENGINE=InnoDB DEFAULT CHARSET=utf8;
- 
-/******** Insertion des Organisateurs *****/ 
- 
-INSERT INTO Organisateurs(Nom,MotDePasse) VALUES ('organisateur','organisateur');
+
+#------------------------------------------------------------
+# Table: Personne
+#------------------------------------------------------------
+
+CREATE TABLE Personne(
+        id           int (11) Auto_increment  NOT NULL ,
+        Nom          Varchar (250) NOT NULL ,
+        Prenom       Varchar (250) NOT NULL ,
+        Nationnalite Varchar (250) NOT NULL ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Court
+#------------------------------------------------------------
+
+CREATE TABLE Court(
+        id       int (11) Auto_increment  NOT NULL ,
+        Nom      Varchar (250) NOT NULL ,
+        Numero   Int NOT NULL ,
+        id_Matchs Int NOT NULL ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Match
+#------------------------------------------------------------
+
+CREATE TABLE Matchs(
+        id              int (11) Auto_increment  NOT NULL ,
+        Tour            Int NOT NULL ,
+        Calendrier      Date NOT NULL ,
+        HeureDebut      Time NOT NULL ,
+        HeureFin        Time NOT NULL ,
+        ResultatEquipe1 Varchar (20) ,
+        ResultatEquipe2 Varchar (20) ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Organisateurs
+#------------------------------------------------------------
+
+CREATE TABLE Organisateurs(
+        id         int (11) Auto_increment  NOT NULL ,
+        Nom        Varchar (100) NOT NULL ,
+        MotDePasse Varchar (100) NOT NULL ,
+        PRIMARY KEY (id )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: PARTICIPER
+#------------------------------------------------------------
+
+CREATE TABLE PARTICIPER(
+        id       Int NOT NULL ,
+        id_Matchs Int NOT NULL ,
+        PRIMARY KEY (id ,id_Matchs )
+)ENGINE=InnoDB;
+
+ALTER TABLE Joueur ADD CONSTRAINT FK_Joueur_id FOREIGN KEY (id) REFERENCES Personne(id);
+ALTER TABLE Arbitre ADD CONSTRAINT FK_Arbitre_id FOREIGN KEY (id) REFERENCES Personne(id);
+ALTER TABLE Arbitre ADD CONSTRAINT FK_Arbitre_id_Matchs FOREIGN KEY (id_Match) REFERENCES Matchs(id);
+ALTER TABLE Court ADD CONSTRAINT FK_Court_id_Matchs FOREIGN KEY (id_Match) REFERENCES Matchs(id);
+ALTER TABLE PARTICIPER ADD CONSTRAINT FK_PARTICIPER_id FOREIGN KEY (id) REFERENCES Personne(id);
+ALTER TABLE PARTICIPER ADD CONSTRAINT FK_PARTICIPER_id_Matchs FOREIGN KEY (id_Match) REFERENCES Matchs(id);
