@@ -51,6 +51,37 @@ form {
     margin-left: 60px;
     
 }
+.conteneurTour
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.conteneurGeneral
+{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.conteneur2
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.conteneur1
+{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+}
 
 h1{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
