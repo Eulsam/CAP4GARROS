@@ -77,6 +77,8 @@ form {
 
 .conteneur1
 {
+    
+    justify-content: space-around;
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -124,6 +126,40 @@ padding-top: 3px ;
 
 
 .CourtsExistants{
+  width:20%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+
+  
+}
+.JoueurGeneral{
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: space-around;
+  
+}
+.NomJoueur{
+  width:80%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: left;
+  margin-left: 15%;
+  vertical-align: middle;
+  height:25px;
+  
+}
+.LabelNomJoueur{
+padding-right: 20px ;
+padding-top: 3px ;
+
+}
+
+
+.JoueurExistants{
   width:20%;
   display: flex;
   flex-direction: column;
