@@ -7,31 +7,24 @@ package com.dao.exception;
 
 /**
  *
- * @author Phuong
+ * @author etudiant
  */
-public class DAOException extends RuntimeException {
+public class DAOException extends Exception {
 
-    
-    
-    public DAOException( String message ) {
-
-        super( message );
-
+    /**
+     * Creates a new instance of <code>DAOException</code> without detail
+     * message.
+     */
+    public DAOException() {
     }
 
-
-    public DAOException( String message, Throwable cause ) {
-
-        super( message, cause );
-
+    /**
+     * Constructs an instance of <code>DAOException</code> with the specified
+     * detail message.
+     *
+     * @param msg the detail message.
+     */
+    public DAOException(String msg) {
+        super(msg);
     }
-
-
-    public DAOException( Throwable cause ) {
-
-        super( cause );
-
-    }
-
 }
-

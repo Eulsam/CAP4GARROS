@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-  <persistence-unit name="CAP4GARROSPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <class>com.dao.entities.Matchs</class>
-    <class>com.dao.entities.Organisateurs</class>
-    <class>com.dao.entities.Courts</class>
-    <class>com.dao.entities.Arbitres</class>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="RolandGarrosPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.entites.Organisateurs</class>
+    <class>com.entites.Arbitre</class>
+    <class>com.entites.Joueur</class>
+    <class>com.entites.Court</class>
+    <class>com.entites.Participer</class>
+    <class>com.entites.Matchs</class>
+    <class>com.entites.Personne</class>
+    <class>com.entites.Organisateur</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/rolandgarros?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="Capgemini"/>
-      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
-      <property name="hibernate.show_sql" value="true"/>
+      <property name="javax.persistence.jdbc.password" value="Poitiers86"/>
     </properties>
   </persistence-unit>
 </persistence>

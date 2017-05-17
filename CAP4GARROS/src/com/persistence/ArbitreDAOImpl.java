@@ -5,27 +5,10 @@
  */
 package com.persistence;
 
-import com.dao.ArbitreDAO;
-
-
 /**
  *
- * @author Phuong
+ * @author etudiant
  */
-public class ArbitreDAOImpl implements ArbitreDAO {
-/* Implémentation de la méthode trouver() définie dans l'interface ArbitreDao */
-    
-    
-/* Implémentation de la méthode creer() définie dans l'interface ArbitreDao */
-   
-    
-    
-
-    
+public class ArbitreDAOImpl {
     
 }
-
-    
-
-    
-

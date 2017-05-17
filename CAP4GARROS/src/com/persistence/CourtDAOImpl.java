@@ -5,18 +5,10 @@
  */
 package com.persistence;
 
-
-import com.dao.CourtDAO;
-
 /**
  *
- * @author Phuong
+ * @author etudiant
  */
-public class CourtDAOImpl implements CourtDAO {
-    /* Implémentation de la méthode trouver() définie dans l'interface CourtDao */
-    
-
-    /* Implémentation de la méthode creer() définie dans l'interface CourtDao */
-    
+public class CourtDAOImpl {
     
 }

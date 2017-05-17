@@ -5,15 +5,10 @@
  */
 package com.persistence;
 
-
-import com.dao.OrganisateurDAO;
-
 /**
  *
- * @author Phuong
+ * @author etudiant
  */
-public class OrganisateurDAOImpl implements OrganisateurDAO {
-    /* Implémentation de la méthode trouver() définie dans l'interface OrganisateurDAO */
-  
- 
+public class OrganisateurDAOImpl {
+    
 }

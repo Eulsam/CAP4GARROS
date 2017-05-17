@@ -7,22 +7,24 @@ package com.dao.exception;
 
 /**
  *
- * @author Phuong
+ * @author etudiant
  */
+public class DAOConfigurationException extends Exception {
 
-    public class DAOConfigurationException extends RuntimeException {
-
-
-    public DAOConfigurationException( String message ) {
-
-        super( message );
-
+    /**
+     * Creates a new instance of <code>CustomException</code> without detail
+     * message.
+     */
+    public DAOConfigurationException() {
     }
 
-    public DAOConfigurationException( String message, Throwable cause ) {
-
-        super( message, cause );
-
+    /**
+     * Constructs an instance of <code>CustomException</code> with the specified
+     * detail message.
+     *
+     * @param msg the detail message.
+     */
+    public DAOConfigurationException(String msg) {
+        super(msg);
     }
-
 }

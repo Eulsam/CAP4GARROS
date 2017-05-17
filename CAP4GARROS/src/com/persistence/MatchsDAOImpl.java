@@ -9,6 +9,6 @@ package com.persistence;
  *
  * @author etudiant
  */
-public class JoueurDAOImpl {
+public class MatchsDAOImpl {
     
 }
