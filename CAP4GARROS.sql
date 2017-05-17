@@ -1,1 +1,0 @@
-SELECT * FROM cap4garros.organisateurs;

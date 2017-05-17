@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS Arbitre;
 DROP TABLE IF EXISTS Court;
 DROP TABLE IF EXISTS Matchs;
 DROP TABLE IF EXISTS Organisateur;
+DROP TABLE IF EXISTS Organisateurs;
 DROP TABLE IF EXISTS Participer;
 DROP TABLE IF EXISTS Personne;
 
@@ -74,9 +75,23 @@ INSERT INTO Organisateurs(Nom,MotDePasse) VALUES ('organisateur','organisateur')
 
 /******** Insertion des Personne *****/ 
 
-INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Dupont','Pierre', 'Française');
-INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Dupond','Jean', 'Allemande');
-INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Fupont','Paul', 'Belge');
-INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Lupont','Jacques', 'Suisse');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Dupont','Pierre', 'FRA');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Drupond','Jean', 'ALL');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Fupont','Paul', 'BEL');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Gros','Joe', 'SUI');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Liam','Nielsen', 'GRE');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Lupont','Jacques', 'SUI');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Du','Gland', 'BEL');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('No','No', 'FRA');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Le','Dude', 'USA');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Mi','Haou', 'CHI');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Cra','Kras', 'POL');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Jageare','Mick', 'GBR');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Tou','Looose', 'ESP');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Labroc','Louis', 'LUX');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Bon','Jean', 'MON');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Lou','Mi', 'AUS');
+INSERT INTO Personne(Nom,Prenom,Nationalite) VALUES ('Enmai','Milou', 'BRA');
+
 
 

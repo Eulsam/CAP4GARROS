@@ -14,7 +14,7 @@ button .btn-label {
 }
 
 .blog-masthead {
-  background-color: #428bca;
+  background-color: #428bca; 
   -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
           box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
 }
@@ -41,7 +41,7 @@ button .btn-label {
   width: 0;
   height: 0;
   margin-left: -5px;
-  vertical-align: middle;
+  vertical-align: middle;  
   content: " ";
   border-right: 5px solid transparent;
   border-bottom: 5px solid;
@@ -91,8 +91,49 @@ h1{
 }
 .Enregistrement{
   width: 50%;
-  padding: 12px 20px;
+  padding: 5px 5px;
   margin: 8px 0;
   box-sizing: border-box;
   text-align:center;
+  
 }
+
+.CourtsGeneral{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-around;
+  
+}
+.NomCourts{
+  width:80%;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  justify-content: center;
+  margin-left: 15%;
+  vertical-align: middle;
+  height:25px;
+  
+}
+.LabelNomCourts{
+padding-right: 20px ;
+padding-top: 3px ;
+
+}
+
+
+.CourtsExistants{
+  width:20%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+
+  
+}
+
+
+
+
+
