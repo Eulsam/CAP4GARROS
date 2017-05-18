@@ -52,7 +52,7 @@ public class Personne implements Serializable {
     @Column(name = "Prenom")
     private String prenom;
     @Basic(optional = false)
-    @Column(name = "Nationnalite")
+    @Column(name = "Nationalite")
     private String nationnalite;
     @Column(name = "Version")
     @Version

@@ -81,7 +81,7 @@ public class GenericDAO implements IGenericDAO {
 
     protected List findByCriteria(Class myClass, String namedQuery, Map<String, Object> parameters) {
         String methodName = "findByCriteria";
-        List entities = null;
+        List entites = null;
         try {
             System.out.println(className + " --> " + methodName + " , myClass : " + myClass + " , namedQuery : " + namedQuery + " , parameters : " + parameters);
             if (namedQuery != null && parameters != null && !parameters.isEmpty()) {
@@ -93,15 +93,15 @@ public class GenericDAO implements IGenericDAO {
                         Object value = entry.getValue();
                         queryParams.setParameter(key, value);
                     }
-                    entities = queryParams.getResultList();
+                    entites = queryParams.getResultList();
                     ManagerHelper.closeEntityManager(em);
                 }
             }
         } catch (Exception e) {
             System.out.println("Erreur lors de l'execution de la methode : " + methodName + " , Exception : " + e);
         }
-        System.out.println(className + " --> " + methodName + " , entities : " + entities);
-        return entities;
+        System.out.println(className + " --> " + methodName + " , entities : " + entites);
+        return entites;
     }
 
     @Override
@@ -396,54 +396,54 @@ public class GenericDAO implements IGenericDAO {
     @Override
     public List<Joueur> findByAllJoueur(Class myClass) {
         String methodName = "findByAllJoueur";
-        List entities = null;
+        List entites = null;
         try {
             System.out.println(className + " --> " + methodName + " , myClass : " + myClass);
             EntityManager em = ManagerHelper.createEntityManager();
             if (em != null) {
-                entities = em.createNamedQuery(myClass.getSimpleName() + ".findByAllJoueur").getResultList();
+                entites = em.createNamedQuery(myClass.getSimpleName() + ".findByAllJoueur").getResultList();
                 ManagerHelper.closeEntityManager(em);
             }
         } catch (Exception e) {
             System.out.println("Erreur lors de l'execution de la methode : " + methodName + " , Exception : " + e);
         }
-        System.out.println(className + " --> " + methodName + " , entities : " + entities);
-        return entities;
+        System.out.println(className + " --> " + methodName + " , entites : " + entites);
+        return entites;
     }
 
     @Override
     public List<Court> findByAllCourt(Class myClass) {
         String methodName = "findByAllCourt";
-        List entities = null;
+        List entites = null;
         try {
             System.out.println(className + " --> " + methodName + " , myClass : " + myClass);
             EntityManager em = ManagerHelper.createEntityManager();
             if (em != null) {
-                entities = em.createNamedQuery(myClass.getSimpleName() + ".findByAllCourt").getResultList();
+                entites = em.createNamedQuery(myClass.getSimpleName() + ".findByAllCourt").getResultList();
                 ManagerHelper.closeEntityManager(em);
             }
         } catch (Exception e) {
             System.out.println("Erreur lors de l'execution de la methode : " + methodName + " , Exception : " + e);
         }
-        System.out.println(className + " --> " + methodName + " , entities : " + entities);
-        return entities;
+        System.out.println(className + " --> " + methodName + " , entites : " + entites);
+        return entites;
     }
 
     @Override
     public List<Arbitre> findByAllArbitre(Class myClass) {
         String methodName = "findByAllArbitre";
-        List entities = null;
+        List entites = null;
         try {
             System.out.println(className + " --> " + methodName + " , myClass : " + myClass);
             EntityManager em = ManagerHelper.createEntityManager();
             if (em != null) {
-                entities = em.createNamedQuery(myClass.getSimpleName() + ".findByAllArbitre").getResultList();
+                entites = em.createNamedQuery(myClass.getSimpleName() + ".findByAllArbitre").getResultList();
                 ManagerHelper.closeEntityManager(em);
             }
         } catch (Exception e) {
             System.out.println("Erreur lors de l'execution de la methode : " + methodName + " , Exception : " + e);
         }
-        System.out.println(className + " --> " + methodName + " , entities : " + entities);
-        return entities;
+        System.out.println(className + " --> " + methodName + " , entites : " + entites);
+        return entites;
     }
 }

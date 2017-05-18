@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link href="css/reset.css" rel="stylesheet" type="text/css"/>
+    <meta charset="utf-8">
+    <title>Plannification des matchs</title>
+
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/starter-template.css" rel="stylesheet">
+    <link href="fontawesome/css/font-awesome.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">    
+    <link href="css/style.css" rel="stylesheet">   
+    
+</head>
+
+
+<body>
+  <div class="blog-masthead">
+        <div class="container">
+          <nav class="blog-nav">
+            <img id="logo" src ="photos/rg-logo-header.png" alt="logoRolandGarros" title ="logo de Roland Garros 2017"/>
+            <a class="blog-nav-item active" href="general.html">Home</a>
+            <a class="blog-nav-item" href="contact.html">Contact</a>
+            <input  class="btn btn-success btn btn-success" type="submit" value="Déconnexion"/></div>
+          </nav>
+        </div>
+  </div>
+  <div class="match">Match
+    <div class="joueur1">Joueur n°1
+      <select name="joueur1" display="inline">
+        <option value="1">nadal</option>
+        <option value="2">djoko</option>
+      </select>
+    </div>
+  
+    <div class="joueur2"> Joueur n°2
+      <select name="joueur2">
+        <option value="1">nadal</option>
+        <option value="2">djoko</option>
+      </select>
+    </div>
+    
+    <div class="arbitre"> Arbitre
+      <select name="arbitre">
+        <option value="1">moi</option>
+        <option value="2">lui</option>
+      </select>
+    </div>
+    
+    <div class="court"> Court
+      <select name="court">
+        <option value="1">principal</option>
+        <option value="2">langlane</option>
+      </select>
+    </div>
+    
+    
+  
+
+    <div class="container">
+        <form action="" class="form-horizontal"  role="form">
+                <div class="form-group">
+                    <label for="dtp_input1" class="col-md-2 control-label">début du match</label>
+                    <div class="input-group date form_datetime col-md-5" data-date="2017-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                        <input class="form-control" size="16" type="text" value="date?" readonly>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                    </div>
+                  <input type="hidden" id="dtp_input1" value="" /><br/>
+                </div>
+        </form>
+    </div>
+
+
+    <div class="container">
+        <form action="" class="form-horizontal"  role="form">
+                <div class="form-group">
+                    <label for="dtp_input1" class="col-md-2 control-label">fin du match</label>
+                    <div class="input-group date form_datetime col-md-5" data-date="2017-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                        <input class="form-control" size="16" type="text" value="date?" readonly>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                    </div>
+                  <input type="hidden" id="dtp_input1" value="" /><br/>
+                </div>
+        </form>
+    </div>
+    
+    <div class="formulaire_bouton">
+            
+      <button type="submit">
+          Valider
+      </button>
+    </div>
+    
+
+    
+  </div>   
+      
+      
+      
+                                 
+      
+      
+    
+                     
+
+    <script src="jquery/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script> 
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="./js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+        $('.form_datetime').datetimepicker({
+            //language:  'fr',
+            weekStart: 1,
+            todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+            showMeridian: 1
+        });
+      $('.form_date').datetimepicker({
+            language:  'fr',
+            weekStart: 1,
+            todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+        });
+      $('.form_time').datetimepicker({
+            language:  'fr',
+            weekStart: 1,
+            todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0
+        });
+    </script>
+    
+</body>
+</html>

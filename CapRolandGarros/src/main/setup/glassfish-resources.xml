@@ -6,8 +6,8 @@
         <property name="portNumber" value="3306"/>
         <property name="databaseName" value="rolandgarros"/>
         <property name="User" value="root"/>
-        <property name="Password" value="Poitiers86"/>
-        <property name="URL" value="jdbc:mysql://localhost:3306/rolandgarros?zeroDateTimeBehavior=convertToNull"/>
+        <property name="Password" value="Capgemini"/>
+        <property name="URL" value="jdbc:mysql://localhost:3306/rolandgarros"/>
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="RolandGarros" object-type="user" pool-name="mysql_rolandgarros_rootPool"/>

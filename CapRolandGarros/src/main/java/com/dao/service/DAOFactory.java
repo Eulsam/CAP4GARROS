@@ -22,7 +22,7 @@ public class DAOFactory {
     private static final String PROPERTY_URL             = "url";
     private static final String PROPERTY_DRIVER          = "driver";
     private static final String PROPERTY_NOM_UTILISATEUR = "root";
-    private static final String PROPERTY_MOT_DE_PASSE    = "Poitiers86";
+    private static final String PROPERTY_MOT_DE_PASSE    = "Capgemini";
 
     private String              url;
     private String              username;

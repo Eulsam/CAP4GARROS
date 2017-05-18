@@ -13,6 +13,19 @@ import java.util.List;
  * @author etudiant
  */
 public interface IPersonneDAO {
+ // chercher une Personne ayant nationalité particulière
+ List<Personne> findByNationnalite(String nationnalite);
+ // créer une nouvelle Personne
+ Personne create(Personne person);
+ // modifier une Personne existante
+ boolean update(Personne person);
+ // modifier une Personne existante et la retourner.
+ Personne updateAndReturn(Personne person);
+ // supprimer une Personne existante
+ boolean delete(Personne person);
+ // chercher une Personne particulière
+ Personne find(Integer id);
+ // obtenir tous les objets Personne
+ List<Personne> findAll();
 
-    public List<Personne> findByNationnalite(String nationnalite);
 }
