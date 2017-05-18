@@ -78,8 +78,9 @@ form {
 .conteneur1
 {
     
-    justify-content: space-around;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     flex-direction: row;
     text-align: center;
     justify-content: space-around;
