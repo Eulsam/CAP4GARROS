@@ -71,7 +71,7 @@ CREATE TABLE Matchs (
  
 /******** Insertion des Organisateur *****/ 
  
-INSERT INTO Organisateurs(Nom,MotDePasse) VALUES ('organisateur','organisateur');
+INSERT INTO Organisateur(Nom,MotDePasse) VALUES ('organisateur','organisateur');
 
 /******** Insertion des Personne *****/ 
 
