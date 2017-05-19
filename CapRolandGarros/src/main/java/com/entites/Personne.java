@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Personne.findByIdPersonne", query = "SELECT p FROM Personne p WHERE p.idPersonne = :idPersonne"),
     @NamedQuery(name = "Personne.findByNom", query = "SELECT p FROM Personne p WHERE p.nom = :nom"),
     @NamedQuery(name = "Personne.findByPrenom", query = "SELECT p FROM Personne p WHERE p.prenom = :prenom"),
-    @NamedQuery(name = "Personne.findByNationnalite", query = "SELECT p FROM Personne p WHERE p.nationnalite = :nationnalite"),
+    @NamedQuery(name = "Personne.findByNationalite", query = "SELECT p FROM Personne p WHERE p.nationalite = :nationalite"),
     @NamedQuery(name = "Personne.findByVersion", query = "SELECT p FROM Personne p WHERE p.version = :version")})
 public class Personne implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -53,7 +53,7 @@ public class Personne implements Serializable {
     private String prenom;
     @Basic(optional = false)
     @Column(name = "Nationalite")
-    private String nationnalite;
+    private String nationalite;
     @Column(name = "Version")
     @Version
     private Integer version;
@@ -61,7 +61,7 @@ public class Personne implements Serializable {
     private Arbitre arbitre;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "personne", fetch = FetchType.LAZY)
     private Joueur joueur;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "personne", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "personne", fetch = FetchType.EAGER)
     private List<Participer> participerList;
 
     public Personne() {
@@ -71,11 +71,11 @@ public class Personne implements Serializable {
         this.idPersonne = idPersonne;
     }
 
-    public Personne(Integer idPersonne, String nom, String prenom, String nationnalite) {
+    public Personne(Integer idPersonne, String nom, String prenom, String nationalite) {
         this.idPersonne = idPersonne;
         this.nom = nom;
         this.prenom = prenom;
-        this.nationnalite = nationnalite;
+        this.nationalite = nationalite;
     }
 
     public Integer getIdPersonne() {
@@ -102,12 +102,12 @@ public class Personne implements Serializable {
         this.prenom = prenom;
     }
 
-    public String getNationnalite() {
-        return nationnalite;
+    public String getNationalite() {
+        return nationalite;
     }
 
-    public void setNationnalite(String nationnalite) {
-        this.nationnalite = nationnalite;
+    public void setNationalite(String nationalite) {
+        this.nationalite = nationalite;
     }
 
     public Integer getVersion() {
@@ -165,7 +165,7 @@ public class Personne implements Serializable {
 
     @Override
     public String toString() {
-        return "Personne{" + "idPersonne=" + idPersonne + ", nom=" + nom + ", prenom=" + prenom + ", nationnalite=" + nationnalite + ", version=" + version + ", arbitre=" + arbitre + ", joueur=" + joueur + ", participerList=" + participerList + '}';
+        return "Personne{" + "idPersonne=" + idPersonne + ", nom=" + nom + ", prenom=" + prenom + ", nationalite=" + nationalite + ", arbitre=" + arbitre + ", joueur=" + joueur + ", participerList=" + participerList + '}';
     }
 
 

@@ -46,7 +46,7 @@ public interface IGenericDAO {
 
     Object findByNomCourt(Class myClass, String nom);
 
-    Object findByNationnalite(Class myClass, String nationnalite);
+    Object findByNationalite(Class myClass, String nationalite);
     
     Object findByCalendrier (Class myClass, Date calendrier);
     

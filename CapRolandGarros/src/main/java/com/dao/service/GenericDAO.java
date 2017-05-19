@@ -302,14 +302,14 @@ public class GenericDAO implements IGenericDAO {
         return obj;
     }
 
-    public Object findByNationnalite(Class myClass, String nationnalite) {
-        String methodName = "findByNationnalite";
+    public Object findByNationalite(Class myClass, String nationalite) {
+        String methodName = "findByNationalite";
         Object obj = null;
         try {
-            System.out.println(className + " --> " + methodName + " , myClass ! " + myClass + " , nationalité du Joueur ! " + nationnalite);
+            System.out.println(className + " --> " + methodName + " , myClass ! " + myClass + " , nationalité du Joueur ! " + nationalite);
             EntityManager em = ManagerHelper.createEntityManager();
             if (em != null) {
-                obj = em.find(myClass, nationnalite);
+                obj = em.find(myClass, nationalite);
                 ManagerHelper.closeEntityManager(em);
             }
         } catch (Exception e) {

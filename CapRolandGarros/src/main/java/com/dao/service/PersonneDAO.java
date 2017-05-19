@@ -16,10 +16,10 @@ import java.util.List;
 public class PersonneDAO extends GenericDAO implements IPersonneDAO {
 
     @Override
-    public List<Personne> findByNationnalite(final String nationnalite) {
-        return findByCriteria(Personne.class, "findByNationnalite", new HashMap() {
+    public List<Personne> findByNationalite(final String nationalite) {
+        return findByCriteria(Personne.class, "findByNationalite", new HashMap() {
             {
-                put("nationnalite", nationnalite);
+                put("nationalite", nationalite);
             }
         });
     }

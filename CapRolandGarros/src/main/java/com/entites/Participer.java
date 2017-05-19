@@ -98,7 +98,9 @@ public class Participer implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entites.Participer[ participerPK=" + participerPK + " ]";
+        return "Participer{" + "participerPK=" + participerPK + ", personne=" + personne + '}';
     }
+
+
     
 }

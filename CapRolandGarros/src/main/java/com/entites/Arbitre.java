@@ -116,7 +116,9 @@ public class Arbitre implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entites.Arbitre[ idArbitre=" + idArbitre + " ]";
+        return "Arbitre{" + "idArbitre=" + idArbitre + ", idMatchs=" + idMatchs + ", personne=" + personne + '}';
     }
+
+
     
 }

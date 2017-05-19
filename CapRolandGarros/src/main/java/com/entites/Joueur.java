@@ -116,7 +116,9 @@ public class Joueur implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entites.Joueur[ idJoueur=" + idJoueur + " ]";
+        return "Joueur{" + "idJoueur=" + idJoueur + ", sexe=" + sexe + ", personne=" + personne + '}';
     }
+
+
     
 }

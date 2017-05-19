@@ -107,7 +107,9 @@ public class Organisateur implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entites.Organisateur[ idOrganisateur=" + idOrganisateur + " ]";
+        return "Organisateur{" + "idOrganisateur=" + idOrganisateur + ", nom=" + nom + ", motDePasse=" + motDePasse + '}';
     }
+
+
     
 }

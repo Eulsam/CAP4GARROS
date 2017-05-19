@@ -213,7 +213,9 @@ public class Matchs implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entites.Matchs[ idMatch=" + idMatch + " ]";
+        return "Matchs{" + "idMatch=" + idMatch + ", equipe1=" + equipe1 + ", equipe2=" + equipe2 + ", nomArbitre=" + nomArbitre + ", prenomArbitre=" + prenomArbitre + ", court=" + court + ", calendrier=" + calendrier + ", heureDebut=" + heureDebut + ", heureFin=" + heureFin + ", duree=" + duree + ", resultatEquipe1=" + resultatEquipe1 + ", resultatEquipe2=" + resultatEquipe2 +'}';
     }
+
+
     
 }

@@ -139,7 +139,9 @@ public class Court implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entites.Court[ idCourt=" + idCourt + " ]";
+        return "Court{" + "idCourt=" + idCourt + ", nom=" + nom + ", numero=" + numero + ", idMatchs=" + idMatchs + ", etatCourt=" + etatCourt + '}';
     }
+
+
     
 }

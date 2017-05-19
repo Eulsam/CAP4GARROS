@@ -73,7 +73,9 @@ public class ParticiperPK implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entites.ParticiperPK[ idParticiper=" + idParticiper + ", idMatchs=" + idMatchs + " ]";
+        return "ParticiperPK{" + "idParticiper=" + idParticiper + ", idMatchs=" + idMatchs + '}';
     }
+
+
     
 }
