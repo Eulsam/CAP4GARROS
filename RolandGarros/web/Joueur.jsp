@@ -81,7 +81,44 @@
                     <% }%>
                 </tbody>
 
+<<<<<<< HEAD
             </table> 
         </div>           
+=======
+        <table style="width:100%; text-align:center;">
+            <h1>Joueurs existants</h1>
+            <thead>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Nationalité</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <%MyDB db = new MyDB();
+                Connection con = db.getCon();
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery("SELECT * FROM personne");
+                while(rs.next()){%>                
+            
+                <tr>
+                 
+                    <td><%= rs.getString("Nom")%></td>
+                    <td><%= rs.getString("Prenom")%></td>
+                    <td><%= rs.getString("Nationalite")%></td>
+                    
+                </tr>
+                <% } %>
+            </tbody>
+
+        </table> 
+    
+   
+        <script src="jquery/jquery.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="js/app.js"></script>        
+            
+>>>>>>> 22cb2e7e6bfadaec5bcb1911fe030182d67f09cd
     </body>
 </html>

@@ -46,7 +46,7 @@ public class Joueur extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try 
-           // (PrintWriter out = response.getWriter()) 
+           //(PrintWriter out = response.getWriter()) 
         {
          String nomJoueur = request.getParameter ("Nom");
          String prenomJoueur = request.getParameter ("Prenom");
@@ -65,7 +65,12 @@ public class Joueur extends HttpServlet {
         }
       //request.getRequestDispatcher("Joueur.jsp").forward(request, response);
         response.sendRedirect("Joueur.jsp");
+<<<<<<< HEAD
         
+=======
+        //RequestDispatcher dispatcher = request.getRequestDispatcher("Joueur.jsp");
+        //dispatcher.include(request, response);
+>>>>>>> 22cb2e7e6bfadaec5bcb1911fe030182d67f09cd
     }
     
     public void resultSet (HttpServletRequest request, HttpServletResponse response)

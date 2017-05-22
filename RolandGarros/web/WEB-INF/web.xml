@@ -20,35 +20,49 @@
         <servlet-name>Court</servlet-name>
         <url-pattern>/Court</url-pattern>    
     </servlet-mapping>
+<<<<<<< HEAD
         <servlet-mapping>
         <servlet-name>Arbitre</servlet-name>
         <url-pattern>/Arbitre</url-pattern> 
     </servlet-mapping>
     
        <servlet>
+=======
+    <servlet>
+>>>>>>> 22cb2e7e6bfadaec5bcb1911fe030182d67f09cd
         <servlet-name>Connection</servlet-name>
         <servlet-class>com.servlet.Connection</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Connection</servlet-name>
         <url-pattern>/Connection</url-pattern>    
+<<<<<<< HEAD
    </servlet-mapping>
    
+=======
+    </servlet-mapping>
+    
+>>>>>>> 22cb2e7e6bfadaec5bcb1911fe030182d67f09cd
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>Connection.jsp</welcome-file>
+        <welcome-file>general.html</welcome-file>
         <welcome-file>Joueur.html</welcome-file>
         <welcome-file>Joueur.jsp</welcome-file>
+<<<<<<< HEAD
         <welcome-file>Court.html</welcome-file>
         <welcome-file>Court.jsp</welcome-file>
         <welcome-file>Arbitre.html</welcome-file>
         <welcome-file>Arbitre.jsp</welcome-file>
         <welcome-file>Connection.jsp</welcome-file>
         <welcome-file>general.html</welcome-file>
+=======
+        <welcome-file>index.html</welcome-file>
+>>>>>>> 22cb2e7e6bfadaec5bcb1911fe030182d67f09cd
         <welcome-file>ResultatSimpleMessieurs.html</welcome-file>
     </welcome-file-list>
 </web-app>
