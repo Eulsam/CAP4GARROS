@@ -6,11 +6,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Joueur</servlet-name>
-        <url-pattern>/Joueur</url-pattern>
+        <url-pattern>/Joueur</url-pattern>    
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>Joueur.html</welcome-file>
+        <welcome-file>Joueur.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

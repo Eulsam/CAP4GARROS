@@ -45,7 +45,9 @@ public class Joueur extends HttpServlet {
     public void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try 
+           // (PrintWriter out = response.getWriter()) 
+        {
          String nomJoueur = request.getParameter ("Nom");
          String prenomJoueur = request.getParameter ("Prenom");
          String nationaliteJoueur = request.getParameter ("Nationalite");
@@ -57,11 +59,12 @@ public class Joueur extends HttpServlet {
          st.executeUpdate("INSERT INTO personne(Nom,Prenom,Nationalite) " +
                             "VALUES ('" + nomJoueur + "', '" + prenomJoueur + "','" + nationaliteJoueur + "' )");
 
-         out.println("Vous avez ajouté une nouvelle personne " );
+         //out.println("Vous avez ajouté une nouvelle personne " );
         }catch (SQLException ex){
           Logger.getLogger(Joueur.class.getName()).log(Level.SEVERE, null, ex);
         }
-      request.getRequestDispatcher("Joueur.html").forward(request, response);
+      //request.getRequestDispatcher("Joueur.jsp").forward(request, response);
+        response.sendRedirect("RolandGarros/Joueur.jsp");
         
     }
     
