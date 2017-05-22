@@ -1,7 +1,7 @@
 <%-- 
     Document   : Joueur.jsp
     Created on : 19 mai 2017, 11:49:43
-    Author     : Phuong
+    Author     :  Romain et Sam 
 --%>
 
 <%@page import="java.sql.Connection"%>
@@ -9,15 +9,13 @@
 <%@page import="com.servlet.MyDB"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
-<!DOCTYPE html>
-<html>
 
+<!DOCTYPE html>
+<html lang="fr">
 
     <head>
-
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Joueurs</title>
+        <meta charset="utf-8">
+        <title>Arbitres</title>
 
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="bootstrap/css/starter-template.css" rel="stylesheet">
@@ -25,6 +23,8 @@
 
         <link href="css/style.css" rel="stylesheet">
     </head>
+
+
     <body>
         <div class="blog-masthead">
             <div class="container">
@@ -33,34 +33,31 @@
                     <a class="blog-nav-item active" href="general.html">Home</a>
                     <a class="blog-nav-item" href="contact.html">Contact</a>
                     <input  class="btn btn-success btn btn-success" type="submit" value="Déconnexion"/>
-
                 </nav>
             </div>
         </div>
+        <h1>Enregistrement des arbitres</h1>
+        <div class="Arbitre">
 
-        <h1>Enregistrement des joueurs</h1>
 
-        <form action="Joueur" method="POST">
-            <label>Nom : </label>
-            <input class="Joueur" name="Nom" placeholder="Nom" /> 
-            <label>Prénom : </label>
-            <input class="Joueur" name="Prenom" placeholder="Prénom" />                                  
-            <label>Nationalité : </label>
-            <input class="Joueur" name="Nationalite" placeholder="Nationalité" />
+            <label style = "width:175px">Prénom : </label>
+            <input name="Prenom" placeholder="Prénom" />
 
+            <label style = "width:175px">Nom :</label>
+            <input name="Nom" class="deroulant" placeholder="Nom" />
+
+           
             <input id="Connexion" class="btn btn-success btn btn-success" type="submit" value="Enregistrer"/> 
-        </form>
 
-        <h1>Joueurs existants</h1>
+        </div>
 
         <div class="formulaire">
-            <table  >
+            <table>
 
                 <thead>
                     <tr>
                         <th>Prénom</th>
                         <th>Nom</th>
-                        <th>Nationalité</th>
                     </tr>
                 </thead>
 
@@ -68,20 +65,28 @@
                     <%MyDB db = new MyDB();
                         Connection con = db.getCon();
                         Statement st = con.createStatement();
-                        ResultSet rs = st.executeQuery("SELECT * FROM personne");
-                    while (rs.next()) {%>                
+                        ResultSet rs = st.executeQuery("SELECT prenom, nom,nationalite FROM personne WHERE nationalite = NULL");
+                        while (rs.next()) {%>                
 
                     <tr>
                         <%--<td><%= rs.getInt("Id")%></td>--%>
                         <td><%= rs.getString("Nom")%></td>
                         <td><%= rs.getString("Prenom")%></td>
-                        <td><%= rs.getString("Nationalite")%></td>
 
                     </tr>
                     <% }%>
                 </tbody>
 
             </table> 
-        </div>           
+        </div> 
+
+
+
+
+
+        <script src="jquery/jquery.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="js/app.js"></script>
     </body>
+
 </html>

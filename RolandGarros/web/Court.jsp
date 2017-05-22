@@ -17,7 +17,7 @@
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Joueurs</title>
+        <title>Courts</title>
 
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="bootstrap/css/starter-template.css" rel="stylesheet">
@@ -38,29 +38,24 @@
             </div>
         </div>
 
-        <h1>Enregistrement des joueurs</h1>
+        <h1>Enregistrement des courts</h1>
 
-        <form action="Joueur" method="POST">
+
+        <form action="Courts" method="POST">
             <label>Nom : </label>
-            <input class="Joueur" name="Nom" placeholder="Nom" /> 
-            <label>Prénom : </label>
-            <input class="Joueur" name="Prenom" placeholder="Prénom" />                                  
-            <label>Nationalité : </label>
-            <input class="Joueur" name="Nationalite" placeholder="Nationalité" />
-
+            <input class="Courts" name="Numero" placeholder="Numeros" /> 
+            <input class="Courts" name="Nom" placeholder="Nom" /> 
             <input id="Connexion" class="btn btn-success btn btn-success" type="submit" value="Enregistrer"/> 
         </form>
 
-        <h1>Joueurs existants</h1>
+       
 
         <div class="formulaire">
-            <table  >
-
+            <table>
                 <thead>
                     <tr>
-                        <th>Prénom</th>
-                        <th>Nom</th>
-                        <th>Nationalité</th>
+                        <th>Numéros</th>
+                        <th>Courts existants</th>
                     </tr>
                 </thead>
 
@@ -68,20 +63,21 @@
                     <%MyDB db = new MyDB();
                         Connection con = db.getCon();
                         Statement st = con.createStatement();
-                        ResultSet rs = st.executeQuery("SELECT * FROM personne");
-                    while (rs.next()) {%>                
+                        ResultSet rs = st.executeQuery("SELECT * FROM court");
+                        while (rs.next()) {%>                
 
                     <tr>
                         <%--<td><%= rs.getInt("Id")%></td>--%>
+                        <td><%= rs.getString("Numero")%></td>
                         <td><%= rs.getString("Nom")%></td>
-                        <td><%= rs.getString("Prenom")%></td>
-                        <td><%= rs.getString("Nationalite")%></td>
-
                     </tr>
                     <% }%>
                 </tbody>
+            </table>
+        </div>
 
-            </table> 
-        </div>           
+        <script src="jquery/jquery.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>

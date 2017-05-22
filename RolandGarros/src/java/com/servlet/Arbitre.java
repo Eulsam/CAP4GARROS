@@ -23,10 +23,10 @@ import javax.servlet.http.HttpSession;
  *
  * @author Phuong
  */
-public class Joueur extends HttpServlet {
+public class Arbitre extends HttpServlet {
     //private static final long serialVersionUID = 1L;
 
-    public Joueur() {
+    public Arbitre() {
 
         super();
 
@@ -48,23 +48,23 @@ public class Joueur extends HttpServlet {
         try 
            // (PrintWriter out = response.getWriter()) 
         {
-         String nomJoueur = request.getParameter ("Nom");
-         String prenomJoueur = request.getParameter ("Prenom");
-         String nationaliteJoueur = request.getParameter ("Nationalite");
-         System.out.println(prenomJoueur);
-         System.out.println(nomJoueur);
+         String nomArbitre = request.getParameter ("Nom");
+         String prenomArbitre = request.getParameter ("Prenom");
+         
+         System.out.println(prenomArbitre);
+         System.out.println(nomArbitre);
          MyDB db = new MyDB();
          Connection con = db.getCon();
          Statement st = con.createStatement();    
-         st.executeUpdate("INSERT INTO personne(Nom,Prenom,Nationalite) " +
-                            "VALUES ('" + nomJoueur + "', '" + prenomJoueur + "','" + nationaliteJoueur + "' )");
+         st.executeUpdate("INSERT INTO personne(Nom,Prenom) " +
+                            "VALUES ('" + nomArbitre + "', '" + prenomArbitre + "' )");
 
          //out.println("Vous avez ajouté une nouvelle personne " );
         }catch (SQLException ex){
-          Logger.getLogger(Joueur.class.getName()).log(Level.SEVERE, null, ex);
+          Logger.getLogger(Arbitre.class.getName()).log(Level.SEVERE, null, ex);
         }
       //request.getRequestDispatcher("Joueur.jsp").forward(request, response);
-        response.sendRedirect("Joueur.jsp");
+        response.sendRedirect("Arbitre.jsp");
         
     }
     
@@ -73,7 +73,7 @@ public class Joueur extends HttpServlet {
         MyDB db = new MyDB();
         Connection con = db.getCon();
         Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM personne");
+        ResultSet rs = st.executeQuery("SELECT prenom, nom,nationalite FROM personne WHERE  nationalite = NULL");
         HttpSession session = request.getSession(true);
         session.setAttribute("resultset", rs); 
         
@@ -96,7 +96,7 @@ public class Joueur extends HttpServlet {
             //processRequest(request, response);
             resultSet(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Joueur.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Arbitre.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
@@ -117,7 +117,7 @@ public class Joueur extends HttpServlet {
         try {
             resultSet(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Joueur.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Arbitre.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Joueurs</title>
+        <title>Courts</title>
 
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="bootstrap/css/starter-template.css" rel="stylesheet">
@@ -26,27 +26,21 @@
             </div>
         </div>
 
-        <h1>Enregistrement des joueurs</h1>
+        <h1>Enregistrement des Courts</h1>
 
-        <form  action="Joueur" method="POST" >
+        <form  action="Court" method="POST" >
             <label>Nom : </label>
-            <input class="Joueur" name="Nom" placeholder="Nom" /> 
-            <label>Prénom : </label>
-            <input class="Joueur" name="Prenom" placeholder="Prénom" />                                  
-            <label>Nationalité : </label>
-            <input class="Joueur" name="Nationalite" placeholder="Nationalité" />
+            <input class="Court" name="Nom" placeholder="Nom" /> 
 
             <input id="Connexion" class="btn btn-success btn btn-success" type="submit" value="Engistrer"/> 
         </form>
 
 
         <table class="formulaire">
-            <h1>Joueurs existants</h1>
+            <h1>Courts existants</h1>
             <thead>
                 <tr>
-                    <th>Prénom</th>
                     <th>Nom</th>
-                    <th>Nationalité</th>
                 </tr>
             </thead>
 

@@ -1,3 +1,9 @@
+
+
+/**
+ *
+ * @author Samuel NOIRAULT
+ */
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,7 +12,7 @@
 package com.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,10 +29,10 @@ import javax.servlet.http.HttpSession;
  *
  * @author Phuong
  */
-public class Joueur extends HttpServlet {
+public class Court extends HttpServlet {
     //private static final long serialVersionUID = 1L;
 
-    public Joueur() {
+    public Court() {
 
         super();
 
@@ -48,23 +54,22 @@ public class Joueur extends HttpServlet {
         try 
            // (PrintWriter out = response.getWriter()) 
         {
-         String nomJoueur = request.getParameter ("Nom");
-         String prenomJoueur = request.getParameter ("Prenom");
-         String nationaliteJoueur = request.getParameter ("Nationalite");
-         System.out.println(prenomJoueur);
-         System.out.println(nomJoueur);
+         String nomCourt = request.getParameter ("Nom");
+         String numerosCourt = request.getParameter ("Numero");
+         System.out.println(nomCourt);
+         System.out.println(numerosCourt);
          MyDB db = new MyDB();
          Connection con = db.getCon();
          Statement st = con.createStatement();    
-         st.executeUpdate("INSERT INTO personne(Nom,Prenom,Nationalite) " +
-                            "VALUES ('" + nomJoueur + "', '" + prenomJoueur + "','" + nationaliteJoueur + "' )");
+         st.executeUpdate("INSERT INTO court(Nom, Numero) " +
+                            "VALUES ('" + nomCourt + "', '" + numerosCourt + "' )");
 
          //out.println("Vous avez ajouté une nouvelle personne " );
         }catch (SQLException ex){
-          Logger.getLogger(Joueur.class.getName()).log(Level.SEVERE, null, ex);
+          Logger.getLogger(Court.class.getName()).log(Level.SEVERE, null, ex);
         }
       //request.getRequestDispatcher("Joueur.jsp").forward(request, response);
-        response.sendRedirect("Joueur.jsp");
+        response.sendRedirect("Court.jsp");
         
     }
     
@@ -73,7 +78,7 @@ public class Joueur extends HttpServlet {
         MyDB db = new MyDB();
         Connection con = db.getCon();
         Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM personne");
+        ResultSet rs = st.executeQuery("SELECT * FROM court");
         HttpSession session = request.getSession(true);
         session.setAttribute("resultset", rs); 
         
@@ -96,7 +101,7 @@ public class Joueur extends HttpServlet {
             //processRequest(request, response);
             resultSet(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Joueur.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Court.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
@@ -117,7 +122,7 @@ public class Joueur extends HttpServlet {
         try {
             resultSet(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(Joueur.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Court.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

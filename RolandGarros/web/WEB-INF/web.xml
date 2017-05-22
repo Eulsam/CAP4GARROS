@@ -4,10 +4,36 @@
         <servlet-name>Joueur</servlet-name>
         <servlet-class>com.servlet.Joueur</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Court</servlet-name>
+        <servlet-class>com.servlet.Court</servlet-class>
+    </servlet>
+        <servlet>
+        <servlet-name>Arbitre</servlet-name>
+        <servlet-class>com.servlet.Arbitre</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Joueur</servlet-name>
-        <url-pattern>/Joueur</url-pattern>    
+        <url-pattern>/Joueur</url-pattern> 
     </servlet-mapping>
+    <servlet-mapping>      
+        <servlet-name>Court</servlet-name>
+        <url-pattern>/Court</url-pattern>    
+    </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>Arbitre</servlet-name>
+        <url-pattern>/Arbitre</url-pattern> 
+    </servlet-mapping>
+    
+       <servlet>
+        <servlet-name>Connection</servlet-name>
+        <servlet-class>com.servlet.Connection</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Connection</servlet-name>
+        <url-pattern>/Connection</url-pattern>    
+   </servlet-mapping>
+   
     <session-config>
         <session-timeout>
             30
@@ -17,5 +43,12 @@
         <welcome-file>index.html</welcome-file>
         <welcome-file>Joueur.html</welcome-file>
         <welcome-file>Joueur.jsp</welcome-file>
+        <welcome-file>Court.html</welcome-file>
+        <welcome-file>Court.jsp</welcome-file>
+        <welcome-file>Arbitre.html</welcome-file>
+        <welcome-file>Arbitre.jsp</welcome-file>
+        <welcome-file>Connection.jsp</welcome-file>
+        <welcome-file>general.html</welcome-file>
+        <welcome-file>ResultatSimpleMessieurs.html</welcome-file>
     </welcome-file-list>
 </web-app>
