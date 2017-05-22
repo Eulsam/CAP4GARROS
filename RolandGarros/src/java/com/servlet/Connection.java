@@ -17,6 +17,7 @@ import javax.servlet.ServletConfig;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 
 
 import javax.servlet.ServletException;
@@ -45,37 +46,41 @@ public class Connection extends HttpServlet {
   // this.config=config;
    }
      public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException{
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        //response.setContentType("text/html;charset=UTF-8");
+        //PrintWriter out = response.getWriter();
 
         try{
         
-        String username=new String("");
-        String password=new String("");
+        String username=request.getParameter("username");
+        String password=request.getParameter("password");
         Class.forName("com.mysql.jdbc.Driver");
         java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/rolandgarros","root","Capgemini");
         Statement st = con.createStatement();      
-        String strQuery = "select * from organisateur WHERE username='"+ username + "' and password='" + password + "'";
+        String strQuery = "select * from organisateur WHERE Nom='"+ username + "' and MotDePasse='" + password + "'";
         ResultSet rs = st.executeQuery(strQuery);
-     out.print(rs);
-        while (rs.next()){
+        System.out.print(username);
+        System.out.print(rs);
+        //while (rs.next()){
         username=rs.getString("Nom");
         password=rs.getString("MotDePass");
-        
+        System.out.println("avantif");
         if(username.equals(request.getParameter("username")) && password.equals(request.getParameter("password"))){
-        request.getSession().setAttribute("username", username);
-        response.sendRedirect("general.html");
+        //request.getSession().setAttribute("Nom", username);
+            RequestDispatcher rd=request.getRequestDispatcher("general");  
+            rd.forward(request,response); 
+        //response.sendRedirect("general.html");
       
         }else{
-            response.sendRedirect("Connection.jsp"); 
+            System.out.println("notif");
+             RequestDispatcher rd=request.getRequestDispatcher("Connection");  
+            rd.forward(request,response);
+           // response.sendRedirect("Connection.jsp"); 
         }
-        }
-        } catch (SQLException ex) {
+        //}
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
-        }
-          
+        } 
+         
 
      }
      

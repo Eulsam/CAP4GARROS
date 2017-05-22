@@ -35,7 +35,26 @@
                     <img id="logo" src ="photos/rg-logo-header.png" alt="logoRolandGarros" title ="logo de Roland Garros 2017"/>
                     <a class="blog-nav-item active" href="general.html">Home</a>
                     <a class="blog-nav-item" href="contact.html">Contact</a>
+                    <%@ page import ="java.sql.*" %>
                   <form action="Connection" method="POST">
+                      <%
+    try{
+        String username = request.getParameter("username");   
+        String password = request.getParameter("password");
+        Class.forName("com.mysql.jdbc.Driver");  // MySQL database connection
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/rolandgarros","root","Capgemini");    
+        PreparedStatement st = con.prepareStatement("select * from organisateur WHERE Nom='"+ username + "' and MotDePasse='" + password + "'");
+        ResultSet rs = st.executeQuery();                        
+        if(rs.next())  
+            if (rs.getString(2).equals(username)& rs.getString(3).equals(password))
+           out.println("Vous êtes bien connecté!");        
+        else
+           out.println("Identifiant ou mot de pas incorrect!");            
+   }
+   catch(Exception e){       
+       out.println("Erreur !! Reconnectez-vous");       
+   }      
+%>
                     <input name="username" placeholder="Identifiant d'organisateur" type="text" id="UserUsername"/>
                     <input name="password" placeholder="Mot de passe" type="password" id="UserPassword"/>
                     <input id="Connexion" class="btn btn-success btn btn-success" type="submit" value="Connexion"/>

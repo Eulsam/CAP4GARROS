@@ -27,5 +27,7 @@
         <welcome-file>general.html</welcome-file>
         <welcome-file>Joueur.html</welcome-file>
         <welcome-file>Joueur.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>ResultatSimpleMessieurs.html</welcome-file>
     </welcome-file-list>
 </web-app>
