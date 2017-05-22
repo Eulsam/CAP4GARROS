@@ -8,13 +8,23 @@
         <servlet-name>Joueur</servlet-name>
         <url-pattern>/Joueur</url-pattern>    
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Connection</servlet-name>
+        <servlet-class>com.servlet.Connection</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Connection</servlet-name>
+        <url-pattern>/Connection</url-pattern>    
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>Connection.jsp</welcome-file>
+        <welcome-file>general.html</welcome-file>
         <welcome-file>Joueur.html</welcome-file>
         <welcome-file>Joueur.jsp</welcome-file>
     </welcome-file-list>

@@ -24,6 +24,9 @@
                 <link href="fontawesome/css/font-awesome.css" rel="stylesheet">
 
                 <link href="css/style.css" rel="stylesheet">
+                <title>Bienvenu</title>
+
+    
         </head>
         <body>
         <div class="blog-masthead">
@@ -32,59 +35,32 @@
                     <img id="logo" src ="photos/rg-logo-header.png" alt="logoRolandGarros" title ="logo de Roland Garros 2017"/>
                     <a class="blog-nav-item active" href="general.html">Home</a>
                     <a class="blog-nav-item" href="contact.html">Contact</a>
-                    <input  class="btn btn-success btn btn-success" type="submit" value="Déconnexion"/>
-
+                  <form action="Connection" method="POST">
+                    <input name="username" placeholder="Identifiant d'organisateur" type="text" id="UserUsername"/>
+                    <input name="password" placeholder="Mot de passe" type="password" id="UserPassword"/>
+                    <input id="Connexion" class="btn btn-success btn btn-success" type="submit" value="Connexion"/>
+                  </form>
                 </nav>
             </div>
         </div>
-
-        <h1>Enregistrement des joueurs</h1>
-
-        <form action="Joueur" method="POST">
-            <label>Nom : </label>
-            <input class="Joueur" name="Nom" placeholder="Nom" /> 
-            <label>Prénom : </label>
-            <input class="Joueur" name="Prenom" placeholder="Prénom" />                                  
-            <label>Nationalité : </label>
-            <input class="Joueur" name="Nationalite" placeholder="Nationalité" />
-
-            <input id="Connexion" class="btn btn-success btn btn-success" type="submit" value="Engistrer"/> 
-        </form>
-
-
-        <table style="width:100%; text-align:center;">
-            <h1>Joueurs existants</h1>
-            <thead>
-                <tr>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Nationalité</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <%MyDB db = new MyDB();
-                Connection con = db.getCon();
-                Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery("SELECT * FROM personne");
-                while(rs.next()){%>                
+        <h1>Résultats</h1>                  
             
-                <tr>
-                 <%--<td><%= rs.getInt("Id")%></td>--%>
-                    <td><%= rs.getString("Nom")%></td>
-                    <td><%= rs.getString("Prenom")%></td>
-                    <td><%= rs.getString("Nationalite")%></td>
-                    
-                </tr>
-                <% } %>
-            </tbody>
+               <a href = "ResultatSimpleMessieurs.html"> <input class="btn btn-success btn btn-success" type="submit" value="Simple messieurs"/></a>
+               <a href = "ResultatSimpleDames.html"><input class="btn btn-success btn btn-success" type="submit" value="Simple dames"/></a>
+               <input  class="btn btn-success btn btn-success" type="submit" value="Double messieurs"/>
+               <input  class="btn btn-success btn btn-success" type="submit" value="Double dames"/>
+               <input  class="btn btn-success btn btn-success" type="submit" value="Double mixtes"/>
+               <input  style = "width:250px;" class="btn btn-success btn btn-success" type="submit" value="Simples Juniors Garçons et Filles"/>
+               <input  style = "width:250px;" class="btn btn-success btn btn-success" type="submit" value="Doubles Juniors Garçons et Filles"/> <br/><br/><br/>
+               
+               <img style="display: block;margin: auto; width: 70%;" src ="photos/YannickNoah.jpg" alt="photo_de_la_page_de_connection"/>
 
-        </table> 
-    
    
+    
+
         <script src="jquery/jquery.js"></script>
         <script src="bootstrap/js/bootstrap.js"></script>
-        <script src="js/app.js"></script>        
+            
             
     </body>
 </html>

@@ -70,7 +70,7 @@
                 while(rs.next()){%>                
             
                 <tr>
-                 <%--<td><%= rs.getInt("Id")%></td>--%>
+                 
                     <td><%= rs.getString("Nom")%></td>
                     <td><%= rs.getString("Prenom")%></td>
                     <td><%= rs.getString("Nationalite")%></td>
