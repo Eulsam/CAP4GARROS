@@ -46,7 +46,7 @@ public class Joueur extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try 
-           // (PrintWriter out = response.getWriter()) 
+           //(PrintWriter out = response.getWriter()) 
         {
          String nomJoueur = request.getParameter ("Nom");
          String prenomJoueur = request.getParameter ("Prenom");
@@ -64,8 +64,9 @@ public class Joueur extends HttpServlet {
           Logger.getLogger(Joueur.class.getName()).log(Level.SEVERE, null, ex);
         }
       //request.getRequestDispatcher("Joueur.jsp").forward(request, response);
-        response.sendRedirect("RolandGarros/Joueur.jsp");
-        
+        response.sendRedirect("Joueur.jsp");
+        //RequestDispatcher dispatcher = request.getRequestDispatcher("Joueur.jsp");
+        //dispatcher.include(request, response);
     }
     
     public void resultSet (HttpServletRequest request, HttpServletResponse response)
